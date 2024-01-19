@@ -210,13 +210,7 @@ nav ul li a:hover::after{
             typing 2s steps(60),
             cursor .4s step-end infinite alternate;
     }
-    /* cursor blinking */
-    @keyframes cursor{
-        50% { border-color: transparent}
-    }
-    @keyframes typing {
-        from { width: 0}
-    }
+    
     .about-col-1{
         flex-basis: 35%;
     }
