@@ -2,149 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick's Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Pappas - Portfolio</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply Inter font and smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f8fa; /* A very light gray background */
+        }
+
+        /* The modern text highlight style */
+        .highlight {
+            background-color: #1a1a1a; /* Modern black */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            line-height: 1.5; /* Adds spacing for multi-line highlights */
+            border-radius: 2px;
+        }
+        
+        /* Blue card style for sections */
+        .blue-section {
+            background: linear-gradient(to right, #60A5FA, #3B82F6);
+            color: white;
+            border-radius: 1.5rem; /* Rounded corners for a card effect */
+            padding: 4rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+    </style>
 </head>
-<body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="text-gray-800">
 
-
-
-            </ul>
-        </nav>
-        <div class="header-text">
-            <p>Computer Science & Engineering Student</p>
-            <h1>Hi, I'm <span>Nicholas Pappas</span>,</h1>
-                <h2>a sophomore CSE major at Ohio State.</h2>
-        </div>
-    </div>
-</div>
-<!-------------about------------->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/headshot2.jpg" alt="">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>I am a highly motivated second-year Computer Science & Engineering major at The Ohio 
-                    State University. As a member of the Morrill Scholarship Program, I am passionate
-                    about contributing to a diverse and inclusive campus and promoting equity in the workplace. 
-                    I have work experience in assistant teaching and customer service, and I'm a proud community volunteer.
-                     I also enjoy programming and problem-solving, and I'm striving to land an internship over the summer
-                     to work toward my goal of becoming a software engineer. 
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-12">
+        
+        <!-- Hero Section -->
+        <div class="text-left py-16">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-6xl font-black">
+                    <span class="highlight">Nicholas Pappas</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-medium">
+                    <span class="highlight">Software Engineer & Innovator.</span>
                 </p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                    <p class="tab-links" onclick="opentab('test-scores')">Test Scores</p>
-                    <p class="tab-links" onclick="opentab('activities-&-societies')">Activities & Societies</p>
+                <p class="text-gray-600 max-w-md pt-4">
+                    A passionate developer focused on building elegant solutions to complex problems. Currently exploring opportunities in AI and machine learning, enterprise software, ServiceNow, and front-end development.
+                </p>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+                <a href="#projects" class="bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                    View My Work
+                </a>
+                <a href="https://www.linkedin.com/in/nickofficial/" target="_blank" rel="noopener noreferrer" class="bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- ServiceNow Projects Section -->
+        <div id="projects" class="blue-section">
+             <h2 class="text-4xl font-black mb-8 text-center">ServiceNow Projects</h2>
+             <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="font-bold text-2xl mb-2">ServiceNow Job Market Analyzer</h3>
+                    <p class="text-gray-600">A web-based tool that analyzes ServiceNow certification and skill demand to provide insights into key skills and qualifications.</p>
+                    <a href="https://nixpacse.github.io/servicenow-job-analyzer/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="font-bold text-2xl mb-2">ServiceNow Rockets and Stars (AI TicTacToe)</h3>
+                    <p class="text-gray-600">A ServiceNow-themed AI game which features an AI opponent that you can play in Tic-Tac-Toe and choose from easy and hard mode.</p>
+                    <a href="https://nixpacse.github.io/rocketsandstars/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="font-bold text-2xl mb-2">ServiceNow Snake Game</h3>
+                    <p class="text-gray-600">A classic implementation of the Snake game, built within the ServiceNow platform as a UI Page.</p>
+                    <a href="https://nixpacse.github.io/servicenowsnake/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                </div>
+                 <!-- Project Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="font-bold text-2xl mb-2">ServiceNow AI Connect4</h3>
+                    <p class="text-gray-600">The classic Connect4 game with a challenging AI opponent, developed and deployed on the ServiceNow platform.</p>
+                    <a href="https://nixpacse.github.io/connect4/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                </div>
+             </div>
+        </div>
 
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Programming Languages</span><br>Java, MATLAB, Javascript, HTML, CSS</li>
-                        <li><span>Text Editors</span><br>Eclipse, Visual Studio Code</li>
-                        <li><span>Soft Skills</span><br>Customer Service, Working in Teams, Critical Thinking, Problems Solving</li>
-
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Sep 2023 - Present</span><br>CSE Undergraduate Teaching Assistant - The Ohio State University</li>
-                        <li><span>Oct 2023 </span><br>HACK OHI/O Hackathon Participant - The Ohio State University</li>
-                        <li><span>Feb 2022 - Apr 2022</span><br>Cashier - Buffalo Wild Wings</li>
-                        
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Aug 2022 - Apr 2026</span><br>B.S. Computer Science & Engineering from The Ohio State University
-                        <br> GPA: 4.0</li>
-                        <li><span>Aug 2020 - Apr 2022</span><br>Dual Enrollment at Bowling Green State University
-                        <br> GPA: 4.0</li>
-                        <li><span>Aug 2018 - May 2022</span><br>High School Diploma from Anthony Wayne High School
-                        <br> GPA: 4.737 Weighted, 4.0 Unweighted</li>
-
-                    </ul>
-                </div>
-                <div class="tab-contents" id="test-scores">
-                    <ul>
-                        <li><span>August 2023</span><br>GMAT - Total Score: 740 (97th Percentile)
-                        <br>Quant: 49<br>Verbal: 42<br> IR: 8<br> AWA: 6</li>
-                        
-                    </ul>
-                </div>
-                <div class="tab-contents" id="activities-&-societies">
-                    <ul>
-                        <li><span>Aug 2023 - Present</span><br>Cybersecurity Club</li>
-                        <li><span>Aug 2023 - Present</span><br>Chinese American Student Association</li>
-                        <li><span>Aug 2023 - Present</span><br>Half Asian People's Association</li>
-                        <li><span>Aug 2023 - Apr 2024</span><br>STEP - Second-Year Transformational Experience Program<br>Morrill Scholar's Cohort</li>
-                        <li><span>Aug 2022 - Present</span><br>Morrill Scholarship Program - Excellence Scholar<br>Early Arrival Program (2022) </li>
-                        
-                    </ul>
+        <!-- General Projects Section -->
+        <div id="general-projects" class="py-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-2 text-blue-500">General Projects</h2>
+                <div class="inline-block w-20 h-1 bg-blue-500 rounded mb-6"></div>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <!-- General Project Card 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                        <h3 class="font-bold text-2xl mb-2">Investment Calculator</h3>
+                        <p class="text-gray-600">An interactive dashboard that visualizes compound interest calculations to encourage investing and wealth building.</p>
+                        <a href="https://nixpacse.github.io/investmentcalculator/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                    </div>
+                    <!-- General Project Card 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-gray-800">
+                        <h3 class="font-bold text-2xl mb-2">AI Sentiment Analysis</h3>
+                        <p class="text-gray-600">A machine learning model that analyzes text to determine if the underlying sentiment is positive, negative, or neutral.</p>
+                        <a href="https://nixpacse.github.io/sentimentanalysis/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!----Services-->
-
-<!----Projects-->
-
-<!----Contact-->
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fas fa-envelope"></i> Email: pappas.294@osu.edu</p>
-                <p><i class="fas fa-phone-square-alt"></i> </p>
-                <p>   </p>
+        <!-- Currently Working On Section -->
+        <div id="current-work" class="py-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-2 text-blue-500">Currently Working On</h2>
+                <div class="inline-block w-20 h-1 bg-blue-500 rounded mb-6"></div>
+                <p class="text-lg text-gray-600">
+                    I'm currently working on developing an AI admissions consultant chatbot for Deferred MBA programs. The goal is to help open-source and democratize the admissions process for Deferred MBA applicants to break down barriers to elite business education.
+                </p>
             </div>
-            <div class="contact-right">
-                <div class="linkedinbutton">
-                    <a href="https://linkedin.com/in/nicholas-pappas-1a9479224">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill=#4F97FB width="100" height="100" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </div>
+
+        <!-- About Me Section -->
+        <div id="about" class="py-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-2 text-blue-500">About Me</h2>
+                <div class="inline-block w-20 h-1 bg-blue-500 rounded mb-6"></div>
+                <p class="text-lg text-gray-600">
+                    I'm Nicholas Pappas, a Computer Science and Engineering student at The Ohio State University with a passion for artificial intelligence and enterprise software solutions. Through my experience as a ServiceNow Developer Intern at KeyBank, I gained valuable hands-on experience with the ServiceNow platform, working on enterprise-level implementations and process automation. I'm fascinated by the transformative potential of AI and am dedicated to leveraging these technologies to solve complex business challenges. My expertise spans AI development, ServiceNow platform administration, front-end/UI development, and creating innovative solutions that bridge cutting-edge technology with real-world enterprise needs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="blue-section">
+            <div class="container mx-auto text-center text-white">
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="https://www.linkedin.com/in/nickofficial/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-white/20 hover:bg-white/30 rounded-full px-6 py-2 transition-colors font-semibold">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
                     </a>
-                    
-
                 </div>
-                
+                <p class="text-sm opacity-80">
+                    &copy; 2025 Nicholas Pappas &bull; pappas.294@osu.edu &bull; Building the future, one line of code at a time.
+                </p>
             </div>
-        </div>
+        </footer>
+
     </div>
-</div>
 
-
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-
-</script>
 </body>
 </html>
